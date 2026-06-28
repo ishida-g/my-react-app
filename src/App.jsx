@@ -5,15 +5,10 @@
 // import './App.css'
 
 function App() {
-
+  const userName = '太郎';
   return (
     <>
-    <h1 className="title">title</h1>
-    <label htmlFor="name">name:</label>
-    <input id="name" type="text" placeholder="input name" />
-
-    <label htmlFor="test">test:</label>
-    <input id="test" type="checkbox"/>
+    <p>こんにちは、{userName || 'ゲスト'}さん！</p>
     </>
   )
 }
