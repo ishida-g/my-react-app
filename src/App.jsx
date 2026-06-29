@@ -1,14 +1,14 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from './assets/vite.svg'
-// import heroImg from './assets/hero.png'
-// import './App.css'
+import './App.css';
+
+
 
 function App() {
-  const userName = '太郎';
+
+  const isGreen = false;
   return (
     <>
-    <p>こんにちは、{userName || 'ゲスト'}さん！</p>
+    <p className={isGreen ? 'green' : 'red'}>サンプルテキスト</p>
+    {/* <p className='counter'>サンプルテキスト</p> */}
     </>
   )
 }
