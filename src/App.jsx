@@ -1,13 +1,21 @@
 import './App.css';
+import { useState } from 'react';
 
-function Profile({name, age, isStudent, hometown, children}){
+function Counter({initialValue, maxValue}) {
+  const [count, setCount] = useState(initialValue);
+
+  const increment = () => {
+    if(count < maxValue){
+      setCount(count + 1);
+    }
+  }
+
   return (
     <>
-      <h2>{name}</h2>
-      <p>年齢：{age}</p>
-      <p>{isStudent ? '学生' : '社会人'}</p>
-      <p>出身地：{hometown}</p>
-      {children}
+      <p>
+        カウント： {count} / {maxValue}
+      </p>
+      <button onClick={increment}>カウントアップ</button>
     </>
   )
 }
@@ -16,10 +24,8 @@ function App() {
 
   return (
     <>
-      <Profile name="田中太郎" age={20} isStudent={true} hometown="東京">
-        <p>趣味：プログラミング</p>
-      </Profile>
-      <Profile name="aaa" age={18} isStudent={false} hometown="大阪"/>
+      <Counter initialValue={10} maxValue={20}/>
+      <Counter initialValue={0} maxValue={5}/>
     </>
   )
 }
