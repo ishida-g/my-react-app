@@ -1,31 +1,17 @@
 import './App.css';
-import { useState } from 'react';
-
-function Counter({initialValue, maxValue}) {
-  const [count, setCount] = useState(initialValue);
-
-  const increment = () => {
-    if(count < maxValue){
-      setCount(count + 1);
-    }
-  }
-
-  return (
-    <>
-      <p>
-        カウント： {count} / {maxValue}
-      </p>
-      <button onClick={increment}>カウントアップ</button>
-    </>
-  )
-}
+import {useState} from 'react';
 
 function App() {
+  const [showMessage, setShowMessage] = useState(false);
+
+  const handleClick = () => {
+    setShowMessage(true);
+  };
 
   return (
     <>
-      <Counter initialValue={10} maxValue={20}/>
-      <Counter initialValue={0} maxValue={5}/>
+      <button onClick={handleClick}>メッセージを表示</button>
+      {showMessage && <p>こんにちは！</p>}
     </>
   )
 }
