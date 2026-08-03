@@ -2,18 +2,19 @@ import './App.css';
 import {useState} from 'react';
 
 function App() {
-  const [showMessage, setShowMessage] = useState(false);
-
-  const handleClick = () => {
-    setShowMessage(true);
-  };
+  const [text, setText] = useState('');
 
   return (
     <>
-      <button onClick={handleClick}>メッセージを表示</button>
-      {showMessage && <p>こんにちは！</p>}
+      <input 
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder = "テキストを入力"
+      />
+      <p>入力: {text}</p>
     </>
   )
 }
 
-export default App
+export default App;
